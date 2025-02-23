@@ -58,7 +58,7 @@ elif page == "New Chat":
                     response.raise_for_status()
                     data = response.json()
                     st.markdown("### Response:")
-                    st.text_area("Next Message:", data.get("next_message", "No next message"), height=300)
+                    st.markdown(data.get("next_message", "No next message"))
                 except requests.exceptions.RequestException as e:
                     st.error(f"Error: {e}")
         else:
